@@ -1,7 +1,7 @@
 {
-  "name": "happy-birthday",
+  "name": "birthday-gallery",
   "version": "1.0.0",
-  "description": "An app that let's you say happy birthday to your friend in a nerdy way.",
+  "description": "An interactive birthday card with photo gallery and animations",
   "main": "index.js",
   "devDependencies": {
     "browser-sync": "^2.18.13",
@@ -13,19 +13,21 @@
     "//": "Hello! If you are having trouble running this command. Try changing Firefox Developer Edition to FirefoxDeveloperEdition",
     "start:darwin:linux": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --port 7777 --no-open",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
+  },  "repository": {
     "type": "git",
-    "url": "git+https://github.com/faahim/happy-birthday.git"
+    "url": "git+https://github.com/aniket123de/Birthday_Del.git"
   },
   "keywords": [
-    "Happy",
-    "Birthday"
+    "birthday",
+    "gallery",
+    "animation",
+    "gsap",
+    "interactive"
   ],
-  "author": "Afiur Rahman Fahim",
+  "author": "Aniket De",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/faahim/happy-birthday/issues"
+    "url": "https://github.com/aniket123de/Birthday_Del/issues"
   },
-  "homepage": "https://github.com/faahim/happy-birthday#readme"
+  "homepage": "https://github.com/aniket123de/Birthday_Del#readme"
 }
