@@ -180,19 +180,16 @@ const animationTimeline = () => {
       buttons.forEach(btn => {
         btn.style.display = "inline-block";
       });
-    });
-  // Restart Animation on click
-  const replayBtn = document.getElementById("replay");
+    });  // Restart Animation on click
+  const replayBtn = document.getElementById("replayButton");
   replayBtn.addEventListener("click", () => {
-    // Refresh the page to start from beginning
-    window.location.reload();
+    // Force reload the page from server, not from cache
+    window.location.href = window.location.href;
   });
-
   // Gallery button event listener
   const galleryBtn = document.getElementById("galleryBtn");
   galleryBtn.addEventListener("click", () => {
-    // Add your gallery navigation logic here
-    console.log("Navigate to gallery");
+    window.location.href = 'gallery.html';
   });
 };
 

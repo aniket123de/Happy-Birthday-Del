@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-family: "Work Sans", sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .gallery-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .photo-container {
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .photo-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }        .photo-container img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .caption {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: rgb(21, 161, 237);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            z-index: 100;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: rgb(18, 140, 207);
+        }
+    </style>
+</head>
+<body>
+    <button class="back-btn" onclick="window.location.href='index.html'">← Back</button>
+    <div class="gallery-container">
+        <div class="photo-container">
+            <img src="img/gallery/photo1.jpg" alt="Birthday Memory 1">
+            <div class="caption">The beginning of a wonderful day ✨</div>
+        </div>
+        <div class="photo-container">
+            <img src="img/gallery/photo2.jpg" alt="Birthday Memory 2">
+            <div class="caption">Moments of joy and laughter 😊</div>
+        </div>
+        <div class="photo-container">
+            <img src="img/gallery/photo3.jpg" alt="Birthday Memory 3">
+            <div class="caption">Friends make everything better 🎈</div>
+        </div>
+        <div class="photo-container">
+            <img src="img/gallery/photo4.jpg" alt="Birthday Memory 4">
+            <div class="caption">Time for cake! 🎂</div>
+        </div>
+        <div class="photo-container">
+            <img src="img/gallery/photo5.jpg" alt="Birthday Memory 5">
+            <div class="caption">Making wishes come true ⭐</div>
+        </div>
+        <div class="photo-container">
+            <img src="img/gallery/photo6.jpg" alt="Birthday Memory 6">
+            <div class="caption">Surprise gifts! 🎁</div>
+        </div>
+        <div class="photo-container">
+            <img src="img/gallery/photo7.jpg" alt="Birthday Memory 7">
+            <div class="caption">Dancing the night away 💃</div>
+        </div>
+        <div class="photo-container">
+            <img src="img/gallery/photo8.jpg" alt="Birthday Memory 8">
+            <div class="caption">Creating memories together 📸</div>
+        </div>
+        <div class="photo-container">
+            <img src="img/gallery/photo9.jpg" alt="Birthday Memory 9">
+            <div class="caption">Beautiful moments shared 🌟</div>
+        </div>
+        <div class="photo-container">
+            <img src="img/gallery/photo10.jpg" alt="Birthday Memory 10">
+            <div class="caption">Until next year! 🎉</div>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for smooth scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe all photo containers
+        document.querySelectorAll('.photo-container').forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
