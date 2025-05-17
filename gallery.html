@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthday Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
             background-color: #000;
-            font-family: "Work Sans", sans-serif;
+            font-family: 'Quicksand', sans-serif;
             color: white;
             overflow-x: hidden;
         }
@@ -36,83 +37,98 @@
             height: auto;
             max-height: 80vh;
             object-fit: contain;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(255,255,255,0.1);
             display: block;
             margin: 0 auto;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .photo-container img:hover {
+            transform: scale(1.02);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         .caption {
-            margin-top: 15px;
+            margin-top: 20px;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             color: #fff;
-        }
-
-        .back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background-color: rgb(21, 161, 237);
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }        .back-btn {
+            display: block;
+            margin: 40px auto;
+            padding: 15px 40px;
+            background-color: #ff9b9b;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
-            font-size: 1rem;
-            z-index: 100;
-            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+            font-family: 'Quicksand', sans-serif;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(255,155,155,0.2);
         }
 
         .back-btn:hover {
-            background-color: rgb(18, 140, 207);
+            background-color: #ef476f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(239,71,111,0.3);
         }
     </style>
 </head>
-<body>
-    <button class="back-btn" onclick="window.location.href='index.html'">← Back</button>
-    <div class="gallery-container">
+<body>    <div class="gallery-container">
         <div class="photo-container">
             <img src="img/gallery/photo1.jpg" alt="Birthday Memory 1">
-            <div class="caption">The beginning of a wonderful day ✨</div>
+            <div class="caption">First photo of 2 of us 🥰</div>
         </div>
         <div class="photo-container">
             <img src="img/gallery/photo2.jpg" alt="Birthday Memory 2">
-            <div class="caption">Moments of joy and laughter 😊</div>
+            <div class="caption">First event in college 😙</div>
         </div>
         <div class="photo-container">
             <img src="img/gallery/photo3.jpg" alt="Birthday Memory 3">
-            <div class="caption">Friends make everything better 🎈</div>
+            <div class="caption">Happy you after winning 🥳</div>
         </div>
         <div class="photo-container">
             <img src="img/gallery/photo4.jpg" alt="Birthday Memory 4">
-            <div class="caption">Time for cake! 🎂</div>
+            <div class="caption">Eto ta bete lagche keno !! 🙁</div>
         </div>
         <div class="photo-container">
             <img src="img/gallery/photo5.jpg" alt="Birthday Memory 5">
-            <div class="caption">Making wishes come true ⭐</div>
+            <div class="caption">Us 24*7 😂</div>
         </div>
         <div class="photo-container">
             <img src="img/gallery/photo6.jpg" alt="Birthday Memory 6">
-            <div class="caption">Surprise gifts! 🎁</div>
+            <div class="caption">Sei sunglass ta berolo na 🥲</div>
         </div>
         <div class="photo-container">
             <img src="img/gallery/photo7.jpg" alt="Birthday Memory 7">
-            <div class="caption">Dancing the night away 💃</div>
+            <div class="caption">Filter ta kom use korrr 😓</div>
         </div>
         <div class="photo-container">
             <img src="img/gallery/photo8.jpg" alt="Birthday Memory 8">
-            <div class="caption">Creating memories together 📸</div>
+            <div class="caption">Ami tor bhai naaaaaaa 😭</div>
         </div>
         <div class="photo-container">
             <img src="img/gallery/photo9.jpg" alt="Birthday Memory 9">
-            <div class="caption">Beautiful moments shared 🌟</div>
+            <div class="caption">Those unintentional twinnings 🫣</div>
         </div>
         <div class="photo-container">
             <img src="img/gallery/photo10.jpg" alt="Birthday Memory 10">
-            <div class="caption">Until next year! 🎉</div>
+            <div class="caption">Onekdin chimti katiniiiiii 🤏🏽</div>
+        </div>
+        <div class="photo-container">
+            <img src="img/gallery/photo11.jpg" alt="Birthday Memory 10">
+            <div class="caption">Don't change ever please 🫶🏼</div>
+        </div>
+        <div class="photo-container">
+            <img src="img/gallery/photo12.jpg" alt="Birthday Memory 10">            <div class="caption">Onek boro hoye geli 😼</div>
         </div>
     </div>
+    <button class="back-btn" onclick="window.location.href='index.html'">← Back to Birthday Card</button>
 
     <script>
         // Intersection Observer for smooth scroll animations
