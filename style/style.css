@@ -232,6 +232,23 @@ body {
   cursor: pointer;
 }
 
+.btn {
+  background-color: rgb(21, 161, 237);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: none; /* Initially hidden */
+}
+
+.btn:hover {
+  background-color: rgb(18, 140, 207);
+}
+
 /* Media Queries */
 @media screen and (max-height: 1000px) {
   .six .hat {
