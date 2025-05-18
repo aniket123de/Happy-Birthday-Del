@@ -115,12 +115,39 @@
       </svg>
     </div>
     <div class="nine">      <p>Okay, now come back and tell me if you liked it.</p>
-      <p class="replay-text">Chobigulo dekh Gallery te</p>      <p class="last-smile">:)</p>      
-      <div style="display: flex; justify-content: center; gap: 50px; margin-top: 20px;">
+      <p class="replay-text">Chobigulo dekh Gallery te</p>      <p class="last-smile">:)</p>      <div style="display: flex; justify-content: center; gap: 50px; margin-top: 20px;">
         <button id="replayButton" class="btn">Replay</button>
         <button id="galleryBtn" class="btn">Go to Gallery</button>
       </div>
-    </div>
+    </div>  </div>
+  <div class="speed-control-container">
+    <label class="switch">
+      <input type="checkbox" id="speedToggle" />
+      <span class="slider">
+        <span class="title">1x</span>
+        <span class="ball">
+          <span class="icon">
+            <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 18V6l8 6-8 6Z"
+              ></path>
+            </svg>
+          </span>
+        </span>
+      </span>
+    </label>
   </div>
   <audio id="birthdayMusic" src="music/bday.mp3" preload="auto"></audio>
 </body>

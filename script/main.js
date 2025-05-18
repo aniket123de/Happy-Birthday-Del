@@ -1,3 +1,23 @@
+// Global variable to track speed state
+let isDoubleSpeed = false;
+
+// Function to update timeline speed
+const updateSpeed = (timeline) => {  const speed = isDoubleSpeed ? 2 : 1;
+  timeline.timeScale(speed);
+  
+  // Update music speed if it's playing
+  const music = document.getElementById("birthdayMusic");
+  if (music) {
+    music.playbackRate = speed;
+  }
+  
+  // Update toggle title text
+  const title = document.querySelector('.switch .title');
+  if (title) {
+    title.textContent = isDoubleSpeed ? "2x" : "1x";
+  }
+};
+
 // Animation Timeline
 const animationTimeline = () => {
   // Split chars that need to be animated individually
@@ -25,12 +45,17 @@ const animationTimeline = () => {
     rotationY: 5,
     skewX: "-15deg"
   };
-
   const tl = new TimelineMax();
 
   // Initialize audio element
   const birthdayMusic = document.getElementById("birthdayMusic");
   birthdayMusic.volume = 0.5; // Set volume to 50%
+    // Initialize speed toggle
+  const speedToggle = document.getElementById("speedToggle");
+  speedToggle.addEventListener("change", () => {
+    isDoubleSpeed = speedToggle.checked;
+    updateSpeed(tl);
+  });
 
   tl
     .to(".container", 0.1, {
