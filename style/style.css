@@ -285,7 +285,7 @@ body {
 }
 
 .switch input:checked + .slider {
-  background-color: #8a5cd4;
+  background-color: #f43487;
 }
 
 .switch input:focus + .slider {
@@ -324,7 +324,7 @@ body {
 }
 
 .switch .slider .ball {
-  background-color: #fff;
+  background-color: #989696;
   height: 36px;
   width: 36px;
   border-radius: 50%;
