@@ -28,6 +28,10 @@ const animationTimeline = () => {
 
   const tl = new TimelineMax();
 
+  // Initialize audio element
+  const birthdayMusic = document.getElementById("birthdayMusic");
+  birthdayMusic.volume = 0.5; // Set volume to 50%
+
   tl
     .to(".container", 0.1, {
       visibility: "visible"
@@ -83,7 +87,7 @@ const animationTimeline = () => {
     .to(".idea-3 strong", 0.5, {
       scale: 1.2,
       x: 10,
-      backgroundColor: "rgb(21, 161, 237)",
+      backgroundColor: "rgb(234, 26, 130)",
       color: "#fff"
     })
     .to(".idea-3", 0.7, ideaTextTransLeave, "+=1.5")
@@ -117,6 +121,10 @@ const animationTimeline = () => {
       rotation: -15,
       ease: Expo.easeOut
     }, 0.2, "+=1")
+    .add(() => {
+      // Play music after idea-6 animation
+      birthdayMusic.play().catch(e => console.log("Error playing music:", e));
+    })
     .staggerFromTo(".baloons img", 2.5, {
       opacity: 0.9,
       y: 1400
