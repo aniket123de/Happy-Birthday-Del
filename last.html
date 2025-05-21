@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Thoughts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    /* Animated stars background */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    
+    .star {
+      position: absolute;
+      background-color: white;
+      border-radius: 50%;
+      animation: twinkle linear infinite;
+    }
+    
+    @keyframes twinkle {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    
+    /* Message card styling */
+    .message-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 50px 40px;
+      max-width: 750px;
+      text-align: center;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      transform: translateY(0);
+      animation: float 6s ease-in-out infinite;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    
+    /* Message portion */
+    .message-portion {
+      position: relative;
+      padding-bottom: 40px;
+    }
+    
+    .message-portion::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    }
+    
+    /* Button portion */
+    .button-portion {
+      padding-top: 10px;
+    }
+    
+    .main-text {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #fc6767, #ec008c, #fc6767);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 5s linear infinite;
+    }
+    
+    @keyframes shine {
+      to { background-position: 200% center; }
+    }
+    
+    .sub-text {
+      font-size: 1.1rem;
+      color: #bb86fc;
+      margin-bottom: 15px;
+      font-weight: 400;
+    }
+    
+    .emoji {
+      font-size: 3rem;
+      margin: 20px 0;
+      display: inline-block;
+      animation: bounce 2s ease infinite;
+    }
+    
+    .heartfelt-message {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+      margin-top: 20px;
+      font-style: italic;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 300;
+      position: relative;
+      padding: 0 20px;
+    }
+    
+    .heartfelt-message::before,
+    .heartfelt-message::after {
+      content: '"';
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      color: rgba(252, 103, 103, 0.4);
+      position: absolute;
+    }
+    
+    .heartfelt-message::before {
+      top: -15px;
+      left: 0;
+    }
+    
+    .heartfelt-message::after {
+      bottom: -15px;
+      right: 0;
+    }
+    
+    /* Button styling */
+    .actions {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    
+    .action-btn {
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .action-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: translateX(-100%);
+      transition: all 0.6s ease;
+    }
+    
+    .action-btn:hover::before {
+      transform: translateX(100%);
+    }
+    
+    .replay {
+      background: linear-gradient(45deg, #03a9f4, #00bcd4);
+      color: white;
+    }
+    
+    .gallery {
+      background: linear-gradient(45deg, #ec008c, #fc6767);
+      color: white;
+    }
+    
+    .action-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+    }
+    
+    .action-btn:active {
+      transform: translateY(-2px);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 650px) {
+      .message-card {
+        margin: 20px;
+        padding: 30px 20px;
+      }
+      
+      .main-text {
+        font-size: 1.5rem;
+      }
+      
+      .actions {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .action-btn {
+        width: 100%;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Stars background -->
+  <div class="stars" id="stars"></div>
+  
+  <!-- Main content -->  <div class="message-card">
+    <div class="message-portion">
+      <p class="heartfelt-message">Bhalo thak, khusi thak sobsomoy....Chap ta ektu kom ne ar amay khawate thak...Kal bhalo kore exam de...Sem er por treat ta dis...And as you say ar besidin nei , 2 years left...& you will always be one of my favourite chapters in my life...But I'll miss u guys 😭...</p>
+    </div>
+    <div class="button-portion">
+      <div class="actions">
+        <button id="replayButton" class="action-btn replay">Replay</button>
+        <button id="galleryBtn" class="action-btn gallery">Go to Gallery</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Create stars for background
+    function generateStars() {
+      const stars = document.getElementById('stars');
+      const count = 200; // Number of stars
+      
+      for (let i = 0; i < count; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        // Random star properties
+        const size = Math.random() * 2;
+        const posX = Math.random() * window.innerWidth;
+        const posY = Math.random() * window.innerHeight;
+        const duration = 3 + Math.random() * 7; // Between 3-10s
+        const delay = Math.random() * 10;
+        
+        // Apply properties
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${posX}px`;
+        star.style.top = `${posY}px`;
+        star.style.animationDuration = `${duration}s`;
+        star.style.animationDelay = `${delay}s`;
+        
+        stars.appendChild(star);
+      }
+    }
+    
+    // Initialize page
+    window.onload = function() {
+      generateStars();
+      
+      // Button event listeners
+      document.getElementById('replayButton').onclick = function() {
+        window.location.href = 'index.html';
+      };
+      
+      document.getElementById('galleryBtn').onclick = function() {
+        window.location.href = 'gallery.html';
+      };
+    };
+  </script>
+</body>
+</html>
